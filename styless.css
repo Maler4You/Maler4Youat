@@ -1,0 +1,296 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #f8f8f8;
+    padding: 10px 20px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#logo img {
+    max-width: 100px; /* Prilagodite veličinu logotipa po potrebi */
+    height: auto;
+}
+
+.brand-name {
+    font-size: 34px;
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fdfdfd;
+    text-decoration: none;
+}
+
+nav {
+    position: relative;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-list > li {
+    position: relative;
+}
+
+.nav-list > li > a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fdfdfd;
+}
+
+.nav-list > li:hover > a {
+    background-color: #555;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+}
+
+.dropdown li {
+    width: 200px; /* Prilagodite širinu padajućeg menija */
+}
+
+.dropdown li a {
+    padding: 10px;
+    color: #fdfdfd;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown li a:hover {
+    background-color: #555;
+}
+
+.nav-list > li:hover .dropdown {
+    display: block;
+}
+
+/* Dodajte responsivnost za mobilne uređaje */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .nav-list > li {
+        width: 100%;
+    }
+
+    .dropdown {
+        position: static;
+        display: none;
+    }
+
+    .nav-list > li.active .dropdown {
+        display: block;
+    }
+
+    .dropdown li a {
+        padding: 15px;
+    }
+}
+
+
+.social-icons {
+    display: flex;
+}
+
+.social-icon {
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.social-icon:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+section#home {
+    background: #bbbbbb; /* Svetla pozadina */
+    padding: 60px 20px; /* Dodajte padding za prostor */
+    text-align: center; /* Centriranje teksta */
+}
+
+section#home h2 {
+    font-size: 36px; /* Veći font za naslov */
+    color: #272727; /* Tamna boja za tekst */
+    margin-bottom: 20px; /* Razmak ispod naslova */
+}
+
+section#home p {
+    font-size: 18px; /* Veliki font za paragraf */
+    color: rgba(255, 215, 0, 0.5); /* Siva boja za paragraf */
+    max-width: 800px; /* Maksimalna širina teksta */
+    margin: 0 auto; /* Centriranje teksta */
+    line-height: 1.6; /* Prostor između linija teksta */
+}
+
+section#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('lux1.jpg') no-repeat center center; /* Slika pozadine */
+    background-size: cover; /* Podesite veličinu slike */
+    opacity: 0.3; /* Prozirnost slike */
+    z-index: -1; /* Pozadinska slika iza sadržaja */
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px;
+}
+
+#reviews {
+    padding: 60px 20px;
+    background: #333; /* Antracit pozadina */
+    position: relative;
+    overflow: hidden;
+}
+
+#reviews::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 215, 0, 0.5); /* Zlatna boja */
+    z-index: 1;
+    animation: paintAnimation 10s infinite;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.reviews {
+    position: relative;
+    z-index: 2;
+    text-align: center; /* Centriranje recenzija */
+}
+
+.review {
+    display: none;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    font-size: 18px; /* Prilagodite veličinu slova */
+}
+
+.review.active {
+    display: block;
+}
+
+.stars {
+    color: gold;
+    font-size: 24px; /* Prilagodite veličinu zvjezdica */
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#map {
+    height: 300px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+/* Animacija farbanja */
+@keyframes paintAnimation {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Navigacijski bar stilizacija */
+nav ul {
+    display: flex;
+    justify-content: center; /* Centriranje navigacije */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fdfdfd;
+    text-decoration: none;
+    font-size: 18px; /* Prilagodite veličinu fonta */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
